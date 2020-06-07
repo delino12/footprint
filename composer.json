@@ -1,0 +1,29 @@
+{
+    "name": "codedreamer/footprint",
+    "description": "Footprint is a laravel package that shows users devices, browser and remote IP information when ever any users interaction with a client using laravel application to reveal mostly page navigation",
+    "authors": [
+        {
+            "name": "Ekpoto Liberty Bernard",
+            "email": "ekpoto.liberty@gmail.com"
+        }
+    ], 
+    "type": "library",
+    "license": "MIT",
+    "require": {},
+    "minimum-stability": "dev",
+    "autoload": {
+    	"psr-4": {
+    		"Codedreamer\\Footprint\\": "src/"
+    	}
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Codedreamer\\Footprint\\FootprintServiceProvider"
+            ],
+            "aliases": {
+                "Codedreamer": "Codedreamer\\Footprint\\Facades\\Footprint"
+            }
+        }
+    }
+}
