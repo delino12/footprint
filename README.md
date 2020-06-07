@@ -48,6 +48,24 @@ $ composer require codedreamer/footprint
 $ composer install
 ```
 
+
+
+```php
+<?php
+ 'providers' => [
+    App\Providers\RouteServiceProvider::class,
+    Codedreamer\Footprint\FootprintServiceProvider::class,
+    ..................
+ ]
+
+ 'aliases' => [
+    'View' => Illuminate\Support\Facades\View::class,
+    'Footprint' => Codedreamer\Footprint\Facades\Footprint::class,
+    ..................
+ ]
+
+```
+
 ## Docs
 
 To log every incoming authentication request add the Footprint static class inside the authenticate request middleware class
