@@ -49,6 +49,7 @@ $ composer install
 ```
 
 
+Locate Laravel config/app.php add providers and aliases facades
 
 ```php
 <?php
