@@ -2,6 +2,8 @@
 
 A laravel package viewing clients IPs, browser information and System Operating System.
 
+[![Footprint](https://res.cloudinary.com/zlayit/image/upload/v1591554804/Screen_Shot_2020-06-07_at_7.22.11_PM_wser52.png)]
+
 
 *Note:* at this point I would strongly recommend use of route names.
 
@@ -122,7 +124,7 @@ Work in progress
 
 ### Backers
 
-Thank you to all our backers! 🙏 become a backer and get your image tag to this package
+Thank you to all our backers! 🙏  become a backer and get your image tag to this package
 
 ### Sponsors
 
