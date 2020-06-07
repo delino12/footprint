@@ -104,29 +104,26 @@ class LoginController extends Controller
 
 ## Security contact information
 
-To report a security vulnerability, please use the
-[Tidelift security contact](https://tidelift.com/security).
-Tidelift will coordinate the fix and disclosure.
+Coming soon
 
 ## Credits
+
+Coming soon
 
 ### Contributors
 
 This project exists thanks to all the people who contribute. 
 
-<a href="https://github.com/briannesbitt/Carbon/graphs/contributors" target="_blank"><img src="https://opencollective.com/Carbon/contributors.svg?width=890&button=false" /></a>
+Coming soon
 
 ### Translators
 
-[Thanks to people helping us to translate Footprint in so many languages](https://carbon.nesbot.com/contribute/translators/)
+Work in progress
 
 ### Backers
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/Carbon#backer)]
-
-<a href="https://opencollective.com/Carbon#backers" target="_blank"><img src="https://opencollective.com/Carbon/backers.svg?width=890"></a>
+Thank you to all our backers! 🙏 become a backer and get your image tag to this package
 
 ### Sponsors
 
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/Carbon#sponsor)]
-<a href="https://opencollective.com/Carbon/sponsor/0/website" target="_blank"><img src="https://opencollective.com/Carbon/sponsor/0/avatar.svg"></a>
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
