@@ -2,7 +2,7 @@
 
 A laravel package viewing clients IPs, browser information and System Operating System.
 
-[![Footprint](https://res.cloudinary.com/zlayit/image/upload/v1591554804/Screen_Shot_2020-06-07_at_7.22.11_PM_wser52.png)]
+[![Footprint](https://res.cloudinary.com/zlayit/image/upload/v1591554804/Screen_Shot_2020-06-07_at_7.22.11_PM_wser52.png =350x)]
 
 
 *Note:* at this point I would strongly recommend use of route names.
