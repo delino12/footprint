@@ -29,6 +29,7 @@ public function task(Request $request){
 ```
 
 ## Installation
+Supported version Laravel 7.x and above.
 
 ### With Composer
 
