@@ -83,21 +83,65 @@ class Footprint extends Model
     |-----------------------------------------
     */
     public function deleteAll($payload){
-    	// body
-    	if(Footprint::truncate()){
-    		$data = [
-    			"status" 	=> "success",
-    			"message" 	=> "Footprint log has been deleted successfully!" 
-    		];
-    	}else{
-    		$data = [
-    			"status" 	=> "error",
-    			"message" 	=> "Error deleting footprint logs" 
-    		];
-    	}
+        // use query option
+        $data = $this->deleteQueryOption($payload);
 
     	// return
     	return $data;
+    }
+
+    /*
+    |-----------------------------------------
+    | SHOW
+    |-----------------------------------------
+    */
+    public function deleteQueryOption($payload){
+        // body
+        if($payload->action == 1){
+            // body
+            if(Footprint::truncate()){
+                $data = [
+                    "status"    => "success",
+                    "message"   => "Footprint log has been deleted successfully!" 
+                ];
+            }else{
+                $data = [
+                    "status"    => "error",
+                    "message"   => "Error deleting footprint logs" 
+                ];
+            }
+        }else if($payload->action == 2){
+            // body
+            $date = \Carbon\Carbon::today()->subDays(7);
+            $footprints = Footprint::where('created_at', '>=', $date)->get();
+            $total_deleted = 0;
+            foreach ($footprints as $key => $value) {
+                $footprint = Footprint::find($value->id)->delete();
+                $total_deleted++;
+            }
+
+            $data = [
+                "status"    => "success",
+                "message"   => $total_deleted." footprint log has been deleted successfully!" 
+            ];
+        }else if($payload->action == 3){
+            // body
+            $date = \Carbon\Carbon::today()->subDays(30);
+            $footprints = Footprint::where('created_at', '>=', $date)->get();
+            $total_deleted = 0;
+            foreach ($footprints as $key => $value) {
+                $footprint = Footprint::find($value->id)->delete();
+                $total_deleted++;
+            }
+
+            $data = [
+                "status"    => "success",
+                "message"   => $total_deleted." footprint log has been deleted successfully!" 
+            ];
+        }
+
+        // return
+        return $data;
     }
 
     /*
