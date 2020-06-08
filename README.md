@@ -67,6 +67,20 @@ Locate Laravel config/app.php add providers and aliases facades
 
 ```
 
+Now publish package vendor to enable view customization and migration
+
+```
+$ php artisan vendor:publish --provider="Codedreamer\Footprint\FootprintServiceProvider"
+
+```
+
+Now run the migration command to migrate footprints table
+```
+$ php artisan migrate
+
+```
+
+
 ## Docs
 
 To log every incoming authentication request add the Footprint static class inside the authenticate request middleware class
