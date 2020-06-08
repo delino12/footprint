@@ -15,7 +15,7 @@ class FootprintServiceProvider extends ServiceProvider
 	*/
 	public function boot(){
 		// body
-		$db_path = __DIR__ . '/../database/migrations/';
+		$db_path = __DIR__ . '/migrations/';
 		$this->loadMigrationsFrom(__DIR__.'/migrations');
 		$this->loadRoutesFrom(__DIR__.'/routes.php');
 		$this->loadViewsFrom(__DIR__.'/views', 'footprint');
