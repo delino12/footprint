@@ -21,6 +21,7 @@ class FootprintServiceProvider extends ServiceProvider
 		$this->publishes([
 			__DIR__.'/views' => base_path('resources/views/codedreamer/footprints'),
 		]);
+		$this->publishes([$path => database_path('migrations')], 'migrations');
 	}
 
 	/**
