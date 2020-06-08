@@ -80,7 +80,7 @@
 								<th>Route</th>
 								<th>Details</th>
 								<th>IP (Addr)</th>
-								<th>Browser Information</th>
+								<th>OS / Client Browser</th>
 								<th>Last Seen</th>
 							</tr>
 						</thead>
