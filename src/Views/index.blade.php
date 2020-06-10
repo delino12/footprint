@@ -57,14 +57,14 @@
 						<h4 class="py-4">
 							
 							<span class="float-right">
-								<a href="javascript:void(0);" onclick="deleteLog(1)" class="btn btn-link">
-								    delete all
+								<a href="javascript:void(0);" onclick="deleteLog(1)" class="btn btn-outline-primary">
+								    <i class="fa fa-trash"></i> all
 								</a>
-								<a href="javascript:void(0);" onclick="deleteLog(2)" class="btn btn-link">
-								    delete last week
+								<a href="javascript:void(0);" onclick="deleteLog(2)" class="btn btn-outline-primary">
+								    <i class="fa fa-trash"></i> last week
 								</a>
-								<a href="javascript:void(0);" onclick="deleteLog(3)" class="btn btn-link">
-								    delete last month
+								<a href="javascript:void(0);" onclick="deleteLog(3)" class="btn btn-outline-primary">
+								    <i class="fa fa-trash"></i> last month
 								</a>
 							</span>
 						</h4>
