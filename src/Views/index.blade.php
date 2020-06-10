@@ -10,109 +10,82 @@
 		<!-- Fonts -->
 	    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 	    <!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{ asset('codedreamer/css/bootstrap.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('codedreamer/css/datatable.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('codedreamer/css/footprint.min.css') }}">
 
-	    <!-- Styles -->
-	    <style>
-	        html, body {
-	            background-color: #fff;
-	            color: #636b6f;
-	            font-family: 'Nunito', sans-serif;
-	            /*font-weight: 200;*/
-	            font-size: 14px;
-	            height: 100vh;
-	            margin: 0;
-	        }
+		<style type="text/css">
+			.dt-buttons .dt-button {
+				padding: 0.5rem;
+				border: 1px solid #2a2dad;
+				border-radius: 2px;
+				font-size: 10px;
+				color: #2a2dad;
+				background-color: transparent;
+				cursor: pointer;
+			}
 
-	        .full-height {
-	            height: 100vh;
-	        }
-
-	        .flex-center {
-	            align-items: center;
-	            display: flex;
-	            justify-content: center;
-	        }
-
-	        .position-ref {
-	            position: relative;
-	        }
-
-	        .top-right {
-	            position: absolute;
-	            right: 10px;
-	            top: 18px;
-	        }
-
-	        .content {
-	            text-align: center;
-	        }
-
-	        .title {
-	            font-size: 84px;
-	        }
-
-	        .links > a {
-	            color: #636b6f;
-	            padding: 0 25px;
-	            font-size: 13px;
-	            font-weight: 600;
-	            letter-spacing: .1rem;
-	            text-decoration: none;
-	            text-transform: uppercase;
-	        }
-
-	        .m-b-md {
-	            margin-bottom: 30px;
-	        }
-	    </style>
+			.dt-buttons .dt-button:hover {
+				padding: 0.5rem;
+				border: 1px solid #999;
+				border-radius: 2px;
+				font-size: 10px;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
 					<h4 class="py-4">Activities</h4>
-					<table class="table audit-trail">
-						<thead>
-							<tr>
-								<th>S/N</th>
-								<th>User</th>
-								<th>Route</th>
-								<th>Details</th>
-								<th>IP (Addr)</th>
-								<th>OS / Client Browser</th>
-								<th>Last Seen</th>
-							</tr>
-						</thead>
-						<tbody class="load-audit-events"></tbody>
-					</table>
+					<div class="table-responsive data-table">
+						<table class="table" id="footprint-table">
+							<thead>
+								<tr>
+									<th>S/N</th>
+									<th>User</th>
+									<th>Route</th>
+									<th>Details</th>
+									<th>IP (Addr)</th>
+									<th>OS / Client Browser</th>
+									<th>Last Seen</th>
+								</tr>
+							</thead>
+							<tbody class="load-audit-events"></tbody>
+						</table>
 
-					<h4 class="py-4">
-						
-						<span class="float-right">
-							<a href="javascript:void(0);" onclick="deleteLog(1)" class="btn btn-link">
-							    delete all
-							</a>
-							<a href="javascript:void(0);" onclick="deleteLog(2)" class="btn btn-link">
-							    delete last week
-							</a>
-							<a href="javascript:void(0);" onclick="deleteLog(3)" class="btn btn-link">
-							    delete last month
-							</a>
-						</span>
-					</h4>
+						<h4 class="py-4">
+							
+							<span class="float-right">
+								<a href="javascript:void(0);" onclick="deleteLog(1)" class="btn btn-link">
+								    delete all
+								</a>
+								<a href="javascript:void(0);" onclick="deleteLog(2)" class="btn btn-link">
+								    delete last week
+								</a>
+								<a href="javascript:void(0);" onclick="deleteLog(3)" class="btn btn-link">
+								    delete last month
+								</a>
+							</span>
+						</h4>
+					</div>
 				</div>
 			</div>
 		</div>
 
-		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- Js libraries -->
+		<script src="{{ asset('codedreamer/js/jquery.min.js') }}"></script>
+		<script src="{{ asset('codedreamer/js/popper.min.js') }}"></script>
+		<script src="{{ asset('codedreamer/js/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('codedreamer/js/font-awesome.min.js') }}"></script>
 
-		<!-- Popper JS -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-		<!-- Latest compiled JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+		<script src="{{ asset('codedreamer/js/jquery.datatable.min.js') }}"></script>
+		<script src="{{ asset('codedreamer/js/bootstrap.datatable.min.js') }}"></script>
+		<script src="{{ asset('codedreamer/js/datatable.buttons.min.js') }}"></script>
+		<script src="{{ asset('codedreamer/js/jszip.min.js') }}"></script>
+		<script src="{{ asset('codedreamer/js/pdfmake.min.js') }}"></script>
+		<script src="{{ asset('codedreamer/js/vfs_fonts.js') }}"></script>
+		<script src="{{ asset('codedreamer/js/buttons.html5.min.js') }}"></script>
 		<script type="text/javascript">
 			// load module
 			fetchAuditTrails();
@@ -157,16 +130,26 @@
 								<td>
 									<span class="text-primary">${val.details}</span>
 								</td>
-								<td>${val.ip}</td>
+								<td><i class="fa fa-globe"></i> ${val.ip}</td>
 								<td><i class="fa fa-tv"></i> ${val.browser}</td>
 								<td>
-									<i class="fa clock-o"></i> ${val.last_seen}
+									<i class="fa fa-clock"></i> ${val.last_seen}
 									<br />
 									${val.date_seen}
 								</td>
 							</tr>
 						`);
 					});
+
+					$("#footprint-table").DataTable({
+				        dom: 'Bfrtip',
+				        buttons: [
+				            'copyHtml5',
+				            'excelHtml5',
+				            'csvHtml5',
+				            'pdfHtml5'
+				        ]
+				    });
 				}).catch(err => {
 					console.log(err);
 				});

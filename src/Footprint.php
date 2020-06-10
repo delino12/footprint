@@ -64,8 +64,10 @@ class Footprint extends Model
             if($user !== null){
             	$value->by = $user->name;
             	$value->email = $user->email;
+            }else{
+                $value->email = "anonymous@domain.com";
             }
-            $value->email = "anonymous@domain.com";
+            
             $value->browser = $this->resolvePlatform($value->browser);
             $value->last_seen = $value->created_at->diffForHumans();
             $value->date_seen = $value->created_at->isoFormat('LLL'); 
