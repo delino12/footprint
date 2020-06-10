@@ -16,6 +16,7 @@ class FootprintServiceProvider extends ServiceProvider
 	public function boot(){
 		// body
 		$db_path = __DIR__ . '/migrations/';
+		$asset_path = __DIR__ . '/public';
 		$this->loadMigrationsFrom(__DIR__.'/migrations');
 		$this->loadRoutesFrom(__DIR__.'/routes.php');
 		$this->loadViewsFrom(__DIR__.'/views', 'footprint');
@@ -23,6 +24,7 @@ class FootprintServiceProvider extends ServiceProvider
 			__DIR__.'/views' => base_path('resources/views/codedreamer/footprints'),
 		]);
 		$this->publishes([$db_path => database_path('migrations')], 'migrations');
+		$this->publishes([$asset_path => public_path('codedreamer')]);
 	}
 
 	/**

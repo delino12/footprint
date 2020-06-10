@@ -64,8 +64,10 @@ class Footprint extends Model
             if($user !== null){
             	$value->by = $user->name;
             	$value->email = $user->email;
+            }else{
+                $value->email = "anonymous@domain.com";
             }
-            $value->email = "anonymous@domain.com";
+            
             $value->browser = $this->resolvePlatform($value->browser);
             $value->last_seen = $value->created_at->diffForHumans();
             $value->date_seen = $value->created_at->isoFormat('LLL'); 
@@ -198,7 +200,7 @@ class Footprint extends Model
 	   	$browser = $this->resolveBrowser($user_agent);
 
 	   	// return
-	   	return $data.' '.$browser;
+	   	return $data.'<br />'.$browser;
     }
 
     /*
@@ -208,19 +210,19 @@ class Footprint extends Model
     */
     public function resolveBrowser($user_agent){
 	    if(preg_match('/OPR/i', $user_agent)){
-	   		$data = "Opera Browser";
+	   		$data = "<i class='fab fa-opera'></i> Opera Browser";
 	   	}elseif(preg_match('/Chrome/i', $user_agent)){
-	   		$data = "Chrome Browser";
+	   		$data = "<i class='fab fa-chrome'></i> Chrome Browser";
 	   	}elseif(preg_match('/Firefox/i', $user_agent)){
-	   		$data = "Mozilla Firefox Browser";
+	   		$data = "<i class='fab fa-firefox'></i> Mozilla Firefox Browser";
 	   	}elseif(preg_match('/Edge/i', $user_agent)){
-	   		$data = "Microsoft Edge Browser";
+	   		$data = "<i class='fab fa-opera'></i> Microsoft Edge Browser";
 	   	}elseif(preg_match('/Trident/i', $user_agent)){
 	   		$data = "Internet Explorer";
 	   	}elseif(preg_match('/MSIE/i', $user_agent)){
 	   		$data = "Internet Explorer";
 	   	}elseif(preg_match('/Safari/i', $user_agent)){
-	   		$data = "Apple Safari";
+	   		$data = "<i class='fab fa-safari'></i> Safari Browser";
 	   	}else{
 	   		$data = "---";
 	   	}
