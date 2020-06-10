@@ -212,7 +212,7 @@ class Footprint extends Model
 	    if(preg_match('/OPR/i', $user_agent)){
 	   		$data = "<i class='fab fa-opera'></i> Opera Browser";
 	   	}elseif(preg_match('/Chrome/i', $user_agent)){
-	   		$data = "<i class='fab fa-google'></i> Chrome Browser";
+	   		$data = "<i class='fab fa-chrome'></i> Chrome Browser";
 	   	}elseif(preg_match('/Firefox/i', $user_agent)){
 	   		$data = "<i class='fab fa-firefox'></i> Mozilla Firefox Browser";
 	   	}elseif(preg_match('/Edge/i', $user_agent)){
