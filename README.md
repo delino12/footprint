@@ -1,6 +1,6 @@
 # Footprint
 
-A laravel package viewing clients IPs, browser information and System Operating System.
+A laravel package viewing clients IPs, browser information and Device Operating System.
 
 ![Footprint](https://res.cloudinary.com/zlayit/image/upload/v1591833165/Screen_Shot_2020-06-10_at_11.06.57_PM_lh6srz.png)
 
